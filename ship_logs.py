@@ -47,7 +47,7 @@ def read_logs(log=None):
 
 def create_schema(df=None, log=None):
     db_string = f"sqlite:////{os.getcwd()}/zeek_logs.sqlite"
-    engine = create_engine(, echo=False)
+    engine = create_engine(db_string, echo=False)
     df.to_sql(f"{log}", con=engine)
 
 
